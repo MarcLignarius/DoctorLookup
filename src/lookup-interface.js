@@ -1,4 +1,4 @@
-import { DoctorLookup } from './doctor-lookup.js';
+import { DoctorLookup } from './lookup-service.js';
 import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -12,7 +12,7 @@ $(document).ready(function() {
     let healthIssue = $('#healthIssue').val();
     $('#name').val("");
     $('#healthIssue').val("");
-    let doctorLookup = new doctorLookup;
+    let doctorLookup = new DoctorLookup;
     let promise = doctorLookup.findDoctor(name, healthIssue);
     promise.then(function(response) {
       let body = JSON.parse(response);
@@ -20,10 +20,10 @@ $(document).ready(function() {
       {
         $('#showDoctors').text(`Your search did not return any results. Please try another search.`)
       } else {
-        // body.forEach(function(doctor) {
-        //   $('#showDoctors').append(`<strong>${doctor.name}</strong><br> ${doctor.street}<br>${doctor.city}, ${doctor.state}, ${doctor.postal_code}<br> ${doctor.phone}<br> <a href='${doctor.website_url}'>${doctor.website_url}</a><hr>`)
-        // }, function(error) {
-        //   $('#showError').text(`There was an error processing your request: ${error.message}`);
+        body.forEach(function(doctor) {
+          $('#showDoctors').append(`<strong>${doctor.name}</strong><br> ${doctor.street}<br>${doctor.city}, ${doctor.state}, ${doctor.postal_code}<br> ${doctor.phone}<br> <a href='${doctor.website_url}'>${doctor.website_url}</a><hr>`)
+        }, function(error) {
+          $('#showError').text(`There was an error processing your request: ${error.message}`);
         })
       }
     })
