@@ -9,11 +9,11 @@ $(document).ready(function() {
     event.preventDefault();
     $('#showDoctors').text("");
     let name = $('#name').val();
-    let healthIssue = $('#healthIssue').val();
+    let symptom = $('#symptom').val();
     $('#name').val("");
-    $('#healthIssue').val("");
+    $('#symptom').val("");
     let doctorLookup = new DoctorLookup;
-    let promise = doctorLookup.findDoctor(name, healthIssue);
+    let promise = doctorLookup.findDoctor(name, symptom);
     promise.then(function(response) {
       let body = JSON.parse(response);
       if (body.length === 0)
