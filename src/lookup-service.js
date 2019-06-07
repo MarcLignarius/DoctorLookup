@@ -1,5 +1,3 @@
-`https://api.betterdoctor.com/2016-03-01/doctors?name=${name}&query=${symptom}&location=or-portland&user_location=45.523064%2C%20-122.676483&sort=full-name-asc&skip=0&limit=10&user_key=${process.env.exports.apiKey}`;
-
 export class DoctorLookup
 {
   findDoctor(name, symptom) {
