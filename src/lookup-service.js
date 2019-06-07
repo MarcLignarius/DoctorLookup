@@ -1,9 +1,9 @@
 export class DoctorLookup
 {
-  findDoctor(name, healthIssue) {
+  findDoctor(name, symptom) {
     return new Promise(function(resolve, reject) {
       let request = new XMLHttpRequest();
-      let url = `https://api.betterdoctor.com/2016-03-01/doctors?&location=or-portland&skip=0&limit=10&user_key=${process.env.exports.apiKey}`;
+      let url = `https://api.betterdoctor.com/2016-03-01/doctors?name=${name}&query=${symptom}&location=or-portland&skip=0&limit=10&user_key=${process.env.exports.apiKey}`;
       request.onload = function() {
         if (this.status === 200) {
           resolve(request.response);
