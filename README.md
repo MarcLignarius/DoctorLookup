@@ -31,11 +31,11 @@ This will watch the file changes in `./src` and automatically build the bundle w
 
 _Creating and Storing Your API key_
 
-* Go to https://home.openweathermap.org/users/sign_in and create an account, or sign in.
-* Go to https://home.openweathermap.org/api_keys, generate a new API key and copy it.
+* Go to https://developer.betterdoctor.com/ and create an account, or sign in.
+* After completing the signup/login process, you should be presented with an API key. Copy this key for use in the application.
 * `$ touch .env` in the top level directory to create a .env file.
-* `$ atom .env` and add "API_KEY = Paste the API key here"
-* Add the .env file to the .gitignore file
+* `$ atom .env` and add "exports.apiKey = xxx" where xxx is the API key you obtained from the BetterDoctor site.
+* (Optional) Add the .env file to the .gitignore file
 
 ## Known Bugs
 There are no known bugs as of last update.
