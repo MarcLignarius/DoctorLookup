@@ -9,7 +9,18 @@
     <div class="jumbotron">
       <h1>Doctor Lookup</h1>
     </div>
-    <!-- Code goes here -->
+    <form id="doctorSearch" method="post">
+      <label for="name">Enter a name:</label><br>
+      <input id="name" type="text" name="name">
+      <br>
+      <label for="healthIssue">Enter a health issue:</label><br>
+      <input id="healthIssue" type="text" name="healthIssue">
+      <br>
+      <button type="submit" name="buton" class="btn btn-dark">Show Doctors</button>
+    </form>
+    <br>
+    <div id="showError"></div>
+    <div id="showDoctors"></div>
   </div>
 </body>
 </html>
