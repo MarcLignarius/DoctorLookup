@@ -1,4 +1,4 @@
-import { DoctorLookup } from './../src/doctor-lookup.js';
+import { DoctorLookup } from './../src/lookup-service.js';
 
 describe('DoctorLookup', function() {
 
