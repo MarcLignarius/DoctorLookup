@@ -50,4 +50,4 @@ This application was built in Atom using JavaScript, Node.js 12.3.1, an API call
 
 *This software is licensed under MIT license.*
 
-Copyright (c) 2019 **_YourNameHere_**
+Copyright (c) 2019 **_Marc Davies_**
