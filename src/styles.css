@@ -1,1 +1,36 @@
-/* Styles go here */
+body {
+  background-image: url("https://image.freepik.com/free-photo/doctor-holding-stethoscope_23-2147822716.jpg");
+  background-blend-mode: multiply;
+  background-color: #969696;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  color: white;
+  }
+
+  .jumbotron h1, em {
+    opacity: 0.80;
+  }
+
+  .jumbotron {
+    background: rgba(61, 58, 57, 0.75);
+  }
+
+  .btn {
+    margin-top: 5px;
+    background: rgba(61, 58, 57, 0.75);
+  }
+
+  label, input {
+      display: inline-block;
+      vertical-align: baseline;
+    }
+
+  input {
+    margin-bottom: 5px;
+  }
+
+  hr {
+    border-color: white;
+    opacity: 0.80;
+  }
