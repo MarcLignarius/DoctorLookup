@@ -21,7 +21,25 @@ $(document).ready(function() {
         $('#showDoctors').text(`Your search did not return any results. Please try another search.`);
       } else {
         body.data.forEach(function(doctor) {
-          $('#showDoctors').append(`<strong>${doctor.name}</strong><br> ${doctor.street}<br>${doctor.city}, ${doctor.state}, ${doctor.postal_code}<br> ${doctor.phone}<br> <a href='${doctor.website_url}'>${doctor.website_url}</a><hr>`);
+          if (doctor.practices[0].website === undefined){
+            $('#showDoctors').append(
+              `<strong>${doctor.profile.last_name}, ${doctor.profile.first_name}</strong><br>
+              ${doctor.practices[0].name}<br>
+              ${doctor.practices[0].visit_address.street}, ${doctor.practices[0].visit_address.city}, ${doctor.practices[0].visit_address.state}, ${doctor.practices[0].visit_address.zip}<br>
+              ${doctor.practices[0].phones[0].number}<br>
+              <hr>`
+            );
+          } else {
+            $('#showDoctors').append(
+              `<strong>${doctor.profile.last_name}, ${doctor.profile.first_name}</strong><br>
+              ${doctor.practices[0].name}<br>
+              ${doctor.practices[0].visit_address.street}, ${doctor.practices[0].visit_address.city}, ${doctor.practices[0].visit_address.state}, ${doctor.practices[0].visit_address.zip}<br>
+              ${doctor.practices[0].phones[0].number}<br>
+              <a href='${doctor.practices[0].website}'>${doctor.practices[0].website}</a><br>
+              <hr>`
+            );
+          }
+
         }, function(error) {
           $('#showError').text(`There was an error processing your request: ${error.message}`);
         });
