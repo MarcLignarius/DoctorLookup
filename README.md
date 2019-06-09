@@ -6,16 +6,18 @@
 
 ## Description
 
-* _This program does things._
-* _This program also does these things._
+* _This program takes two inputs allowing users to search by either doctor name, or health symptom._
+* _This program then makes a call to the BetterDoctor API and returns a list of doctors matching those search terms._
 * _See specs below for more detail._
 
 ## Specs
 | Behavior | Input | Output |
 | ------------- |:-------------:| -----:|
-| If user does this, the program does that | this | that |
-| If user does this, the program does that | this | that |
-| If user does this, the program does that | this | that |
+| If user does not enter a name or a symptom, program displays "Please enter a doctor name or health symptom/doctor specialty." | Enter a doctor name: "", Enter your symptom or doctor specialty: "", click submit | "Please enter a doctor name or health symptom/doctor specialty." |
+| If API call returns no results, program displays "Your search did not return any results. Please try another search."  | Enter a doctor name: "Barozzini", Enter your symptom or doctor specialty: "detist", click submit | "Your search did not return any results. Please try another search." |
+| If user does not enter a doctor name but enters "dentist" in the symptom/specialty field, the programs returns a list of dentists. | Enter a doctor name: "", Enter your symptom or doctor specialty: "dentist", click submit | ![ss1](https://i.imgur.com/rjuEQNa.png) |
+| If user does not enter a symptom/specialty but enters "Smith" in the doctor name field, the programs returns a list of doctors named Smith. | Enter a doctor name: "Smith", Enter your symptom or doctor specialty: "", click submit | ![ss2](https://i.imgur.com/sUAi5Qj.png) |
+| If user enters "Barozzini" in the doctor name field and "dentist" in the symptom/specialty field, the programs returns that specific doctor's information. | Enter a doctor name: "Barozzini", Enter your symptom or doctor specialty: "dentist", click submit | ![ss3](https://i.imgur.com/vonCfKB.png) |
 
 ## Installation and Setup
 
