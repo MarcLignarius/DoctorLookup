@@ -15,7 +15,7 @@ $(document).ready(function() {
     promise.then(function(response) { // a call is made to the API and the function displays the results in the #showDoctors div.
       let body = JSON.parse(response);
       if ($('#name').val() == "" && $('#symptom').val() == "") { // form validation which checks for two empty input fields.
-          $('#showDoctors').text(`Please enter a doctor name or health symptom.`);
+          $('#showDoctors').text(`Please enter a doctor name or health symptom/doctor specialty.`);
         } else if (body.data.length === 0) { // checks for an empty search result
             $('#showDoctors').text(`Your search did not return any results. Please try another search.`);
             console.log("HERE");
