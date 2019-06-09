@@ -21,12 +21,19 @@ $(document).ready(function() {
         $('#showDoctors').text(`Your search did not return any results. Please try another search.`);
       } else {
         body.data.forEach(function(doctor) {
+          let newPatients = "";
+          if (doctor.practices[0].accepts_new_patients === true) {
+            newPatients = "This doctor currently accepts new patients."
+          } else {
+            newPatients = "This doctor does not currently accept new patients."
+          }
           if (doctor.practices[0].website === undefined){
             $('#showDoctors').append(
               `<strong>${doctor.profile.last_name}, ${doctor.profile.first_name}</strong><br>
               ${doctor.practices[0].name}<br>
               ${doctor.practices[0].visit_address.street}, ${doctor.practices[0].visit_address.city}, ${doctor.practices[0].visit_address.state}, ${doctor.practices[0].visit_address.zip}<br>
               ${doctor.practices[0].phones[0].number}<br>
+              ${newPatients}<br>
               <hr>`
             );
           } else {
@@ -36,6 +43,7 @@ $(document).ready(function() {
               ${doctor.practices[0].visit_address.street}, ${doctor.practices[0].visit_address.city}, ${doctor.practices[0].visit_address.state}, ${doctor.practices[0].visit_address.zip}<br>
               ${doctor.practices[0].phones[0].number}<br>
               <a href='${doctor.practices[0].website}'>${doctor.practices[0].website}</a><br>
+              ${newPatients}<br>
               <hr>`
             );
           }
