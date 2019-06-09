@@ -9,6 +9,7 @@
     <div class="jumbotron">
       <h1>Doctor Lookup</h1>
     </div>
+    <!-- Begin form which takes the user inputs -->
     <form id="doctorSearch" method="post">
       <label for="name">Enter a name:</label><br>
       <input id="name" type="text" name="name">
@@ -19,8 +20,11 @@
       <button type="submit" name="buton" class="btn btn-dark">Show Doctors</button>
     </form>
     <br>
+    <!-- End form -->
+    <!-- Begin section which outputs the results of the API call and DoctorLookup -->
     <div id="showError"></div>
     <div id="showDoctors"></div>
+    <!-- End section -->
   </div>
 </body>
 </html>
